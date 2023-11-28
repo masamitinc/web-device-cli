@@ -199,6 +199,11 @@ function setupHterm() {
     window.term_ = term;
 }
 
+var sliderPwm; 
 window.onload = function() {
     lib.init(setupHterm);
+    sliderPwm = document.getElementById("PwmRange");
+    sliderPwm.oninput = function(){
+        document.getElementById("PwmSetButton").innerText = this.value;
+    }
 };
