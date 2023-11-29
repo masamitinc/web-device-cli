@@ -199,11 +199,27 @@ function setupHterm() {
     window.term_ = term;
 }
 
-var sliderPwm; 
+document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.querySelector('input[type="checkbox"]');
+  
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        // do this
+        nusSendString("d1\r");
+        console.log('Checked');
+      } else {
+        // do that
+        nusSendString("d0\r");
+        console.log('Not checked');
+      }
+    });
+    var sliderPwm = document.getElementById("PwmRange");
+    sliderPwm.addEventListener('input', function(){
+        document.getElementById("PwmSetButton").innerText = "Duty:"+this.value+"%";
+    });
+  });
+
+
 window.onload = function() {
     lib.init(setupHterm);
-    sliderPwm = document.getElementById("PwmRange");
-    sliderPwm.oninput = function(){
-        document.getElementById("PwmSetButton").innerText = this.value;
-    }
 };

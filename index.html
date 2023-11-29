@@ -20,8 +20,12 @@
             <button id="clientConnectButton" type="button" class="btn btn-default" onclick="connectionToggle()">Connect</button>
         </div>
         <div id="buttoncontainer">
-            <button class="lotusbutton1" id="PwmSetButton" type="button" class="btn btn-default" onclick="nusSendString('p'+document.getElementById('PwmRange').value+'\r')">PwmSet</button>
             <button class="lotusbutton1" id="clientCopyLogButton" type="button" class="btn btn-default" onclick="navigator.clipboard.writeText(term_.io.terminal_.getRowsText(1,term_.io.terminal_.scrollbackRows_.length+ term_.io.terminal_.getCursorRow()+1))">ToClipBD</button>
+            <button class="lotusbutton1" id="PwmSetButton" type="button" class="btn btn-default" onclick="nusSendString('p'+document.getElementById('PwmRange').value+'\r')">PwmSet</button>
+            <label class="switch">
+                <input type="checkbox">
+                <div class="sliderToggleSwitch"></div>
+              </label>
             <div id="slidecontainer">
                 <input type="range" min="1" max="30" value="20" class="slider" id="PwmRange">
                 <label for="PwmRange">Range</label>
