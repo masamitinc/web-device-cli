@@ -36,5 +36,16 @@
 
         <script src='./js/hterm_all.js'></script>
         <script src='./js/app.js'></script>
+
+/**Debug**/
+<script>
+function lotus_dump2console()
+{
+    var s = "";
+    len = term_.io.terminal_.scrollbackRows_.length  ;for (i=1; i<len;i++) {s+=term_.io.terminal_.scrollbackRows_[i].textContent  +"\n";}
+    len = term_.io.terminal_.screen_.rowsArray.length;for (i=1; i<len;i++) {s+=term_.io.terminal_.screen_.rowsArray[i].textContent+"\n";}
+    console.log(s);
+}
+</script>
     </body>
 </html>
